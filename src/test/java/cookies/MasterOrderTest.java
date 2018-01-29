@@ -45,6 +45,15 @@ public class MasterOrderTest {
 		int check = underTest.getTotalBoxes();
 		assertEquals(2, check);
 	}
+	
+	@Test
+	public void assertThatGetTotalBoxesIsThree() {
+		MasterOrder underTest = new MasterOrder();
+		underTest.addOrder(new CookieOrder("tagalongs", 2));
+		underTest.addOrder(new CookieOrder("thin mints", 1));
+		int check = underTest.getTotalBoxes();
+		assertEquals(3, check);
+	}
 	//
 	// @Test
 	// public void assertThatAnOrderHasBeenRemoved() {

@@ -15,7 +15,11 @@ public class MasterOrder {
 	}
 
 	public int getTotalBoxes() {
-		return orders.get(0).getNumBoxes();
+		int totalBoxes = 0;
+		for (CookieOrder order : orders) {
+			totalBoxes += order.getNumBoxes();
+		}
+		return totalBoxes;
 	}
 
 }
