@@ -37,13 +37,14 @@ public class MasterOrderTest {
 
 		assertEquals(1, check);
 	}
-	//
-	// @Test
-	// public void assertThatGetTotalBoxesIsTwo() {
-	//
-	//
-	// assertEquals(____, check);
-	// }
+
+	@Test
+	public void assertThatGetTotalBoxesIsTwo() {
+		MasterOrder underTest = new MasterOrder();
+		underTest.addOrder(new CookieOrder("Tagalongs", 2));
+		int check = underTest.getTotalBoxes();
+		assertEquals(2, check);
+	}
 	//
 	// @Test
 	// public void assertThatAnOrderHasBeenRemoved() {

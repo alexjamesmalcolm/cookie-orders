@@ -5,6 +5,7 @@ import java.util.List;
 
 public class MasterOrder {
 	List<CookieOrder> orders = new ArrayList<CookieOrder>();
+
 	public void addOrder(CookieOrder cookieOrder) {
 		orders.add(cookieOrder);
 	}
@@ -14,7 +15,7 @@ public class MasterOrder {
 	}
 
 	public int getTotalBoxes() {
-		return 1;
+		return orders.get(0).getNumBoxes();
 	}
 
 }
