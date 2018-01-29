@@ -22,4 +22,12 @@ public class MasterOrder {
 		return totalBoxes;
 	}
 
+	public void removeVariety(String variety) {
+		for (CookieOrder order : orders) {
+			if(order.getVariety().equals(variety)) {
+				orders.remove(order);
+			}
+		}
+	}
+
 }
