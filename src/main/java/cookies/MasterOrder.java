@@ -15,19 +15,17 @@ public class MasterOrder {
 	}
 
 	public int getTotalBoxes() {
-		int totalBoxes = 0;
-		for (CookieOrder order : orders) {
-			totalBoxes += order.getNumBoxes();
-		}
-		return totalBoxes;
+		return orders.stream().mapToInt(order -> order.getNumBoxes()).sum();
 	}
 
 	public void removeVariety(String variety) {
-		for (CookieOrder order : orders) {
-			if(order.getVariety().equals(variety)) {
-				orders.remove(order);
-			}
-		}
+		orders.removeIf(order -> order.getVariety().equals(variety));
+	}
+
+	public void showOrder() {
+		orders.forEach(order -> {
+			System.out.println("Variety: " + order.getVariety() + ", Boxes: " + order.getNumBoxes());
+		});
 	}
 
 }
